@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+require("./src/db/connection");
 
 const brandRoutes = require("./src/routes/brand");
 const specsRoutes = require("./src/routes/specs");
