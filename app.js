@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 require("./src/db/connection");
 
-const brandRoutes = require("./src/routes/brand");
+const phoneRoutes = require("./src/routes/phone");
 const { errorJson } = require("./src/utils/response");
 
 app.get("/", (req, res) => {
@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.use("/brands", brandRoutes);
+app.use("/brands", phoneRoutes);
 app.get('*', (req, res) => errorJson(res, `Route not found!`, 404))
 
 const PORT = process.env.PORT || 3000;
