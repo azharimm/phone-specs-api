@@ -7,10 +7,15 @@ exports.index = async (req, res) => {
         const page = req.query.page || 1;
         const limit = req.query.limit || 10;
         const skip = (page - 1) * limit;
+        const order = req.query.sort || 'brand:asc';
+        const field = order.split(':')[0];
+        const sort = order.split(':')[1] === 'asc' ? 1 : -1;
+
         const total = await Brand.find().countDocuments();
         const brands = await Brand.find({})
             .skip(skip)
             .limit(parseInt(limit))
+            .sort([[field, sort]])
             .exec();
 
         return json(res, {
@@ -30,10 +35,15 @@ exports.show = async (req, res) => {
         const page = req.query.page || 1;
         const limit = req.query.limit || 10;
         const skip = (page - 1) * limit;
+        const order = req.query.sort || 'brand:asc';
+        const field = order.split(':')[0];
+        const sort = order.split(':')[1] === 'asc' ? 1 : -1;
+
         const total = await Specs.find({ brand_slug }).countDocuments();
         const brands = await Specs.find({ brand_slug })
             .skip(skip)
             .limit(parseInt(limit))
+            .sort([[field, sort]])
             .exec();
 
         if(total === 0) {
