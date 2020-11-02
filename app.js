@@ -4,17 +4,12 @@ const app = express();
 require("./src/db/connection");
 
 const phoneRoutes = require("./src/routes/phone");
-const { errorJson } = require("./src/utils/response");
+const indexRoutes = require("./src/routes/index");
+const errorRoutes = require("./src/routes/error");
 
-app.get("/", (req, res) => {
-    res.json({
-        status: true,
-        data: "Phone Specs API",
-    });
-});
-
+app.use("/", indexRoutes);
 app.use("/brands", phoneRoutes);
-app.get('*', (req, res) => errorJson(res, `Route not found!`, 404))
+app.use('*', errorRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`App running on PORT ${PORT}`));

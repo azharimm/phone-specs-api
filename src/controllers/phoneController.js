@@ -36,6 +36,10 @@ exports.show = async (req, res) => {
             .limit(parseInt(limit))
             .exec();
 
+        if(total === 0) {
+            return errorJson(res, `Brand not found`, 404);
+        }
+
         return json(res, {
             page: parseInt(page),
             limit: parseInt(limit),
