@@ -5,6 +5,7 @@ require("./src/db/connection");
 
 const brandRoutes = require("./src/routes/brand");
 const specsRoutes = require("./src/routes/specs");
+const { errorJson } = require("./src/utils/response");
 
 app.get("/", (req, res) => {
     res.json({
@@ -13,8 +14,9 @@ app.get("/", (req, res) => {
     });
 });
 
-app.use("/brand", brandRoutes);
+app.use("/brands", brandRoutes);
 app.use("/specs", specsRoutes);
+app.get('*', (req, res) => errorJson(res, `Route not found!`, 404))
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`App running on PORT ${PORT}`));
