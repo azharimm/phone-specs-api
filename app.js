@@ -3,6 +3,12 @@ const express = require("express");
 const app = express();
 require("./src/db/connection");
 
+const phoneRoutes = require("./src/routes/phone");
+const indexRoutes = require("./src/routes/index");
+const errorRoutes = require("./src/routes/error");
+const searchRoutes = require("./src/routes/search");
+const scrapeRoutes = require("./src/routes/scrape");
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "https://azharimm.tk");
     res.setHeader(
@@ -12,12 +18,6 @@ app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
     next();
 });
-
-const phoneRoutes = require("./src/routes/phone");
-const indexRoutes = require("./src/routes/index");
-const errorRoutes = require("./src/routes/error");
-const searchRoutes = require("./src/routes/search");
-const scrapeRoutes = require("./src/routes/scrape");
 
 app.use("/", indexRoutes);
 app.use("/brands", phoneRoutes);
