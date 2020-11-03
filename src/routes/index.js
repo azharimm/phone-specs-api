@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        status: true,
-        data: "Phone Specs API",
-    });
-});
+const indexController = require('../controllers/index')
+
+router.get("/", indexController.index);
 
 module.exports = router;
