@@ -62,7 +62,7 @@ exports.show = async (req, res) => {
                     phone_name_slug: brand.phone_name_slug,
                     brand: brand.brand,
                     brand_slug: brand.brand_slug,
-                    phone_img_url: brand.phone_name,
+                    phone_img_url: brand.phone_img_url,
                     created_at: brand.created_at,
                 };
             }),
