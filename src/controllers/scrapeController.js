@@ -111,11 +111,11 @@ exports.index = async (req, res) => {
     try {
         const url = req.query.url;
         const baseUrl = 'https://www.gsmarena.com/';
-        if(!url.includes(baseUrl)) {
-            return errorJson(res, 'Please provide a valid URL from gsmrena!', 422);
-        }
         if(!url) {
             return errorJson(res, 'Please provide a valid URL!', 422);
+        }
+        if(!url.includes(baseUrl)) {
+            return errorJson(res, 'Please provide a valid URL from gsmrena!', 422);
         }
         const response = await scrapeSpecs(url);
         const isExists = await Specs.findOne({phone_name_slug: response.phone_name_slug});
