@@ -3,6 +3,16 @@ const express = require("express");
 const app = express();
 require("./src/db/connection");
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://azharimm.tk");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
+    next();
+});
+
 const phoneRoutes = require("./src/routes/phone");
 const indexRoutes = require("./src/routes/index");
 const errorRoutes = require("./src/routes/error");
