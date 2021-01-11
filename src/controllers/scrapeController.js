@@ -10,7 +10,7 @@ let phone_name_slug;
 let phone_img_url;
 const scrapeResults = [];
 
-const features = [
+let features = [
     "Network",
     "Launch",
     "Body",
@@ -125,8 +125,11 @@ exports.index = async (req, res) => {
                 'Data is already available in the database!',
             );
         }
+        response.specifications = response.scrapeResults;
         const newData = new Specs(response);
         await newData.save();
+        delete response.scrapeResults;
+        scrapeResults = []
         return json(res, response);
     } catch (error) {
         return errorJson(res, error);

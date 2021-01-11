@@ -6,11 +6,16 @@ exports.index = async (req, res) => {
         const page = req.query.page || 1;
         const limit = req.query.limit || 10;
         const skip = (page - 1) * limit;
-        const order = req.query.sort || 'brand:asc';
-        const field = order.split(':')[0];
-        const sort = order.split(':')[1] === 'asc' ? 1 : -1;
-        const search = req.query.query ? [{phone_name: {$regex: req.query.query, $options: 'i'}}, {brand: {$regex: req.query.query, $options: 'i'}}] : {};
-  
+        const order = req.query.sort || "brand:asc";
+        const field = order.split(":")[0];
+        const sort = order.split(":")[1] === "asc" ? 1 : -1;
+        const search = req.query.query
+            ? [
+                  { phone_name: { $regex: req.query.query, $options: "i" } },
+                  { brand: { $regex: req.query.query, $options: "i" } },
+              ]
+            : {};
+
         const total = await Specs.find({ $or: search }).countDocuments();
         const brands = await Specs.find({ $or: search })
             .skip(skip)
@@ -36,4 +41,4 @@ exports.index = async (req, res) => {
     } catch (error) {
         return errorJson(res, error);
     }
-}
+};
