@@ -8,7 +8,7 @@ let brand_slug;
 let phone_name;
 let phone_name_slug;
 let phone_img_url;
-const scrapeResults = [];
+let scrapeResults = [];
 
 let features = [
     "Network",
