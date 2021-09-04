@@ -54,6 +54,7 @@ exports.show = async (req, res) => {
             const image = $(el).find('img').attr('src');
             const phone_name = $(el).children('a').text();
             phones.push({
+                brand: title.replace('phones', ''),
                 phone_name,
                 slug,
                 image,

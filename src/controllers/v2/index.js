@@ -19,8 +19,8 @@ exports.index = (req, res) => {
             example: fullUrl+'/apple_iphone_12_pro_max-10237'
         },
         search: {
-            endpoint: '/search',
-            example: fullUrl+'search?query=Galaxy Note'
+            endpoint: '/v2/search',
+            example: fullUrl+'/search?query=Iphone 12 pro max'
         },
     });
 }
