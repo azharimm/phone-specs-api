@@ -3,11 +3,9 @@ const express = require("express");
 const app = express();
 require("./src/db/connection");
 
-const phoneRoutes = require("./src/routes/phone");
 const indexRoutes = require("./src/routes/index");
+const indexRoutesV2 = require("./src/routes/v2/index");
 const errorRoutes = require("./src/routes/error");
-const searchRoutes = require("./src/routes/search");
-const scrapeRoutes = require("./src/routes/scrape");
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "https://azharimm.tk");
@@ -20,9 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/", indexRoutes);
-app.use("/brands", phoneRoutes);
-app.use("/search", searchRoutes);
-app.use("/scrape", scrapeRoutes);
+app.use("/v2", indexRoutesV2);
 app.use('*', errorRoutes);
 
 const PORT = process.env.PORT || 3000;

@@ -135,3 +135,21 @@ exports.index = async (req, res) => {
         return errorJson(res, error);
     }
 }
+
+exports.test = async (req, res) => {
+    try {
+        const url = req.query.url;
+        const baseUrl = 'https://www.gsmarena.com/';
+        if(!url) {
+            return errorJson(res, 'Please provide a valid URL!', 422);
+        }
+        if(!url.includes(baseUrl)) {
+            return errorJson(res, 'Please provide a valid URL from gsmrena!', 422);
+        }
+        const response = await scrapeSpecs(url);
+        response.specifications = response.scrapeResults;
+        return json(res, response);
+    } catch (error) {
+        return errorJson(res, error);
+    }
+}
