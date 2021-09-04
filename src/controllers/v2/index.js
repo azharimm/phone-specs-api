@@ -15,16 +15,12 @@ exports.index = (req, res) => {
             example: fullUrl+'/brands/apple-phones-48'
         },
         phone_specs: {
-            endpoint: '/v2/brands/{brand_slug}/{phone_slug}',
-            example: fullUrl+'brands/samsung/galaxy-note20-ultra-5g'
+            endpoint: '/v2/{phone_slug}',
+            example: fullUrl+'/apple_iphone_12_pro_max-10237'
         },
         search: {
             endpoint: '/search',
             example: fullUrl+'search?query=Galaxy Note'
         },
-        scrape: {
-            endpoint: '/scrape',
-            example: fullUrl+'scrape?url=https://www.gsmarena.com/samsung_galaxy_tab_s7+-10336.php'
-        }
-    })
+    });
 }

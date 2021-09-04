@@ -10,16 +10,16 @@ exports.index = async (req, res) => {
         const brands = [];
         $('table').find('tr').children('td').each((index, el) => {
             const element = $(el).children('a');
-            const deviceCount = element.find('span').text();
-            const brandName = element.text().replace(deviceCount, '');
-            const brandSlug = element.attr('href').replace('.php', '');
-            const brandId = element.attr('href').split('-')[2].replace('.php', '');
+            const device_count = element.find('span').text();
+            const brand_name = element.text().replace(device_count, '');
+            const brand_slug = element.attr('href').replace('.php', '');
+            const brand_id = element.attr('href').split('-')[2].replace('.php', '');
             brands.push({
-                brandId: parseInt(brandId),
-                brandName,
-                brandSlug,
-                deviceCount: parseInt(deviceCount.replace(' devices', '')),
-                detail: req.protocol + '://' + req.get('host')+'/v2/brands/'+brandSlug
+                brand_id: parseInt(brand_id),
+                brand_name,
+                brand_slug,
+                device_count: parseInt(device_count.replace(' devices', '')),
+                detail: req.protocol + '://' + req.get('host')+'/v2/brands/'+brand_slug
             })
         });
 
