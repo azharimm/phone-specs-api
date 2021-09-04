@@ -28,7 +28,7 @@ let features = [
 const scrapeSpecs = async (url) => {
 	try {
 		const htmlResult = await request.get(url);
-        const $ = await cheerio.load(htmlResult);
+        let $ = await cheerio.load(htmlResult);
       
 		phone = $("h1.specs-phone-name-title").text();
 		if (!phone) {
@@ -36,7 +36,7 @@ const scrapeSpecs = async (url) => {
 		}
 		brand = phone.split(" ")[0];
 		phone_name = phone.split(brand)[1].trim();
-		phone_img_url = $(".specs-photo-main")
+		thumbnail = $(".specs-photo-main")
 			.children("a")
 			.children("img")
 			.attr("src");
@@ -87,10 +87,29 @@ const scrapeSpecs = async (url) => {
 				scrapeResults.push(obj);
 			}
 		});
+		const release_date = $('.icon-launched').next().text();
+		const dimension = $('.icon-mobile2').next().text();
+		const os = $('.icon-os').next().text();
+		const storage = $('.icon-sd-card-0').next().text();
+		const phone_image_url = $('.icon-pictures').parent('a').attr('href');
+		const phone_images = [];
+		if(phone_image_url) {
+			const html = await request.get(`${process.env.BASE_URL}/${phone_image_url}`);
+			$ = await cheerio.load(html);
+			$('#pictures-list').children('img').each((index, el) => {
+				let src = $(el).attr('src');
+				if(src) phone_images.push(src);
+			});
+		}
 		return {
 			brand,
 			phone_name,
-			phone_img_url,
+			thumbnail,
+			phone_images,
+			release_date,
+			dimension,
+			os,
+			storage,
 			scrapeResults,
 		};
 	} catch (error) {
