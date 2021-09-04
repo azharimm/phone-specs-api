@@ -4,7 +4,7 @@ const { json, errorJson } = require("../../utils/response");
 
 exports.index = async (req, res) => {
     try {
-        const url = 'https://www.gsmarena.com/makers.php3';
+        const url = `${process.env.BASE_URL}/makers.php3`;
         const htmlResult = await request.get(url);
         const $ = await cheerio.load(htmlResult);
         const brands = [];
@@ -18,7 +18,8 @@ exports.index = async (req, res) => {
                 brandId: parseInt(brandId),
                 brandName,
                 brandSlug,
-                deviceCount: parseInt(deviceCount.replace(' devices', ''))
+                deviceCount: parseInt(deviceCount.replace(' devices', '')),
+                detail: req.protocol + '://' + req.get('host')+'/v2/brands/'+brandSlug
             })
         });
 
@@ -34,14 +35,14 @@ exports.show = async (req, res) => {
         let page = req.query.page;
         let url;
         if(page === undefined || page == 1) {
-            url = `https://www.gsmarena.com/${slug}.php`;
+            url = `${process.env.BASE_URL}/${slug}.php`;
             page = 1;
         }else {
             // apple-phones-f-48-0-p2.php
             const slug_split = slug.split('-')
             const id = slug_split[2];
             const phone_slug = slug_split[0]+'-'+slug_split[1];
-            url = `https://www.gsmarena.com/${phone_slug}-f-${id}-0-p${page}.php`;
+            url = `${process.env.BASE_URL}/${phone_slug}-f-${id}-0-p${page}.php`;
         }
         const htmlResult = await request.get(url);
         const $ = await cheerio.load(htmlResult);
@@ -55,7 +56,8 @@ exports.show = async (req, res) => {
             phones.push({
                 phone_name,
                 slug,
-                image
+                image,
+                detail: req.protocol + '://' + req.get('host')+'/v2/'+slug
             })
         })
         

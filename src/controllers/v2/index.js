@@ -7,15 +7,15 @@ exports.index = (req, res) => {
         source: 'https://github.com/azharimm/phone-specs-api',
         description: 'Phone Specs API v2, Recommended to use',
         list_brands: {
-            endpoint: '/brands',
-            example: fullUrl+'brands'
+            endpoint: '/v2/brands',
+            example: fullUrl+'/brands'
         },
         list_phones: {
-            endpoint: '/brands/{brand_slug}',
-            example: fullUrl+'brands/samsung'
+            endpoint: '/v2/brands/{brand_slug}',
+            example: fullUrl+'/brands/apple-phones-48'
         },
         phone_specs: {
-            endpoint: '/brands/{brand_slug}/{phone_slug}',
+            endpoint: '/v2/brands/{brand_slug}/{phone_slug}',
             example: fullUrl+'brands/samsung/galaxy-note20-ultra-5g'
         },
         search: {
