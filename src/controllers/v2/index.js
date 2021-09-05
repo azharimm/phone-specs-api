@@ -22,5 +22,9 @@ exports.index = (req, res) => {
             endpoint: '/v2/search',
             example: fullUrl+'/search?query=Iphone 12 pro max'
         },
+        latest: {
+            endpoint: '/v2/latest',
+            example: fullUrl+'/latest'
+        },
     });
 }
