@@ -14,6 +14,7 @@ router.get("/brands/:slug", brandController.show);
 router.get("/search", searchController.index);
 router.get("/latest", miscController.index);
 router.get("/top-by-interest", miscController.topInterest);
+router.get("/top-by-fans", miscController.topFans);
 router.get("/:slug", specController.index);
 
 module.exports = router;

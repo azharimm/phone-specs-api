@@ -56,7 +56,50 @@ exports.topInterest = async (req, res) => {
 					phones.push({
 						phone_name,
 						slug,
-						hits,
+						hits: parseInt(hits.replace(/,/g, '')),
+						detail:
+							req.protocol +
+							"://" +
+							req.get("host") +
+							"/v2/" +
+							slug,
+					});
+				}
+			});
+
+		return json(res, {
+			title,
+			phones,
+		});
+	} catch (error) {
+		return errorJson(res, error);
+	}
+};
+
+exports.topFans = async (req, res) => {
+	try {
+		const url = `${process.env.BASE_URL}`;
+		const htmlResult = await request.get(url);
+		const $ = await cheerio.load(htmlResult);
+		const title = "Top By Daily Interest";
+		const phones = [];
+		$('h4:contains("fans")')
+			.next()
+			.find("tbody")
+			.find("tr")
+			.each((index, el) => {
+				const phone_name = $(el).find("th").text();
+				if (phone_name) {
+					const slug = $(el)
+						.find("th")
+						.find("a")
+						.attr("href")
+						.replace(".php", "");
+					const favorites = $(el).find("td").eq(1).text();
+					phones.push({
+						phone_name,
+						slug,
+						favorites: parseInt(favorites.replace(/,/g, '')),
 						detail:
 							req.protocol +
 							"://" +

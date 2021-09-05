@@ -30,5 +30,9 @@ exports.index = (req, res) => {
             endpoint: '/v2/top-by-interest',
             example: fullUrl+'/top-by-interest'
         },
+        top_by_fans: {
+            endpoint: '/v2/top-by-fans',
+            example: fullUrl+'/top-by-fans'
+        },
     });
 }
