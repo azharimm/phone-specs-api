@@ -1,63 +1,70 @@
+## Important Notes:
+Hi i've updated this api, if you're currently using this API please take a look at the new `/v2` endpoint and consider using it since the original version is about to be terminated anytime soon. Thanks!
+
 # Phone Specifications API
 The data is based on gsmarena site
 ## 1. List Brands
 ```
-[ENDPOINT] /brands
+[ENDPOINT] /v2/brands
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.tk/brands?page=2&limit=5&search=&sort=brand:desc
+[GET] https://api-mobilespecs.azharimm.tk/v2/brands
 ```
-### Query params
-| params        | desc | required |
-| --------------- |:---------:|:---------:|
-| page | page of the data | `no` |
-| limit | limit data being showed | `no` |
-| search | search brand by query | `no` |
-| sort | sorting data by field available | `no` |
 
 ## 2. List Phones
 ```
-[ENDPOINT] /brands/{brand_slug}
+[ENDPOINT] /v2/brands/{brand_slug}
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.tk/brands/samsung?page=2&limit=5&sort=brand:desc
+[GET] https://api-mobilespecs.azharimm.tk/v2/brands/apple-phones-48?page=2
 ```
 ### Query params
 | params        | desc | required |
 | --------------- |:---------:|:---------:|
 | page | page of the data | `no` |
-| limit | limit data being showed | `no` |
-| sort | sorting data by field available | `no` |
+
 
 ## 3. Phone Specifications
 ```
-[ENDPOINT] /brands/{brand_slug}/{phone_slug}
+[ENDPOINT] /v2/brands/{brand_slug}/{phone_slug}
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.tk/brands/samsung/galaxy-note20-ultra-5g
+[GET] https://api-mobilespecs.azharimm.tk/v2/apple_iphone_12_pro_max-10237
 ```
 
 ## 4. Search
 ```
-[ENDPOINT] /search
+[ENDPOINT] /v2/search
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.tk/search?query= Galaxy Note
+[GET] http://api-mobilespecs.azharimm.tk/v2/search?query= iPhone 12 pro max
 ```
 ### Query params
 | params        | desc | required |
 | --------------- |:---------:|:---------:|
 | query | search query | `yes` |
 
-## 4. Scrape
-just in case there is a new data available in gsmarena or the data you need is not available yet on this api. you can scrape the data manually using this endpoint.
+## 5. Latest
 ```
-[ENDPOINT] /scrape
+[ENDPOINT] /v2/latest
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.tk/scrape?url=https://www.gsmarena.com/samsung_galaxy_tab_s7+-10336.php
+[GET] https://api-mobilespecs.azharimm.tk/v2/latest
 ```
-### Query params
-| params        | desc | required |
-| --------------- |:---------:|:---------:|
-| url | url page you want to scrape | `yes` |
+
+## 6. Top By Interest
+```
+[ENDPOINT] /v2/top-by-interest
+```
+```
+[GET] https://api-mobilespecs.azharimm.tk/v2/top-by-interest
+```
+
+## 7. Top By Fans
+```
+[ENDPOINT] /v2/top-by-fans
+```
+```
+[GET] https://api-mobilespecs.azharimm.tk/v2/top-by-fans
+```
+
