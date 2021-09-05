@@ -32,3 +32,46 @@ exports.index = async (req, res) => {
 		return errorJson(res, error);
 	}
 };
+
+exports.topInterest = async (req, res) => {
+	try {
+		const url = `${process.env.BASE_URL}`;
+		const htmlResult = await request.get(url);
+		const $ = await cheerio.load(htmlResult);
+		const title = "Top By Daily Interest";
+		const phones = [];
+		$('h4:contains("interest")')
+			.next()
+			.find("tbody")
+			.find("tr")
+			.each((index, el) => {
+				const phone_name = $(el).find("th").text();
+				if (phone_name) {
+					const slug = $(el)
+						.find("th")
+						.find("a")
+						.attr("href")
+						.replace(".php", "");
+					const hits = $(el).find("td").eq(1).text();
+					phones.push({
+						phone_name,
+						slug,
+						hits,
+						detail:
+							req.protocol +
+							"://" +
+							req.get("host") +
+							"/v2/" +
+							slug,
+					});
+				}
+			});
+
+		return json(res, {
+			title,
+			phones,
+		});
+	} catch (error) {
+		return errorJson(res, error);
+	}
+};

@@ -26,5 +26,9 @@ exports.index = (req, res) => {
             endpoint: '/v2/latest',
             example: fullUrl+'/latest'
         },
+        top_by_interest: {
+            endpoint: '/v2/top-by-interest',
+            example: fullUrl+'/top-by-interest'
+        },
     });
 }

@@ -13,6 +13,7 @@ router.get("/brands", brandController.index);
 router.get("/brands/:slug", brandController.show);
 router.get("/search", searchController.index);
 router.get("/latest", miscController.index);
+router.get("/top-by-interest", miscController.topInterest);
 router.get("/:slug", specController.index);
 
 module.exports = router;
