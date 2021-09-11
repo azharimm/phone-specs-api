@@ -8,7 +8,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/brands
 ```
 ```
-[GET] https://api-mobilespecs.azharimm.tk/v2/brands
+[GET] https://api-mobilespecs.azharimm.site/v2/brands
 ```
 
 ## 2. List Phones
@@ -16,7 +16,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/brands/{brand_slug}
 ```
 ```
-[GET] https://api-mobilespecs.azharimm.tk/v2/brands/apple-phones-48?page=2
+[GET] https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-48?page=2
 ```
 ### Query params
 | params        | desc | required |
@@ -29,7 +29,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/brands/{brand_slug}/{phone_slug}
 ```
 ```
-[GET] https://api-mobilespecs.azharimm.tk/v2/apple_iphone_12_pro_max-10237
+[GET] https://api-mobilespecs.azharimm.site/v2/apple_iphone_12_pro_max-10237
 ```
 
 ## 4. Search
@@ -37,7 +37,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/search
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.tk/v2/search?query= iPhone 12 pro max
+[GET] http://api-mobilespecs.azharimm.site/v2/search?query= iPhone 12 pro max
 ```
 ### Query params
 | params        | desc | required |
@@ -49,7 +49,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/latest
 ```
 ```
-[GET] https://api-mobilespecs.azharimm.tk/v2/latest
+[GET] https://api-mobilespecs.azharimm.site/v2/latest
 ```
 
 ## 6. Top By Interest
@@ -57,7 +57,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/top-by-interest
 ```
 ```
-[GET] https://api-mobilespecs.azharimm.tk/v2/top-by-interest
+[GET] https://api-mobilespecs.azharimm.site/v2/top-by-interest
 ```
 
 ## 7. Top By Fans
@@ -65,6 +65,6 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/top-by-fans
 ```
 ```
-[GET] https://api-mobilespecs.azharimm.tk/v2/top-by-fans
+[GET] https://api-mobilespecs.azharimm.site/v2/top-by-fans
 ```
 
