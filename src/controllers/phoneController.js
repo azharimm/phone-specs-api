@@ -81,7 +81,7 @@ exports.specs = async (req, res) => {
             return errorJson(res, `Phone not found`, 404);
         }
         return json(res, {
-            brand: data.brand,
+            brand: data.brand.trim(),
             phone_name: data.phone_name,
             phone_name_slug: data.phone_name_slug,
             phone_img_url: data.phone_img_url,
