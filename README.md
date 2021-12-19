@@ -1,5 +1,6 @@
 ## Important Notes:
 Hi i've updated this api, if you're currently using this API please take a look at the new `/v2` endpoint and consider using it since the original version is about to be terminated anytime soon. Thanks!
+
 This API is only meant for fun only, so i don't recommend to use this API if you're planning to build a serious project. You can take a look at https://techspecs.io it provides the same kind API for specs with more stable and robust features.
 
 # Phone Specifications API
