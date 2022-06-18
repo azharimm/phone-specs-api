@@ -3,6 +3,8 @@ Hi i've updated this api, if you're currently using this API please take a look 
 
 This API is only meant for fun only, so i don't recommend to use this API if you're planning to build a serious project. You can take a look at https://techspecs.io it provides the same kind API for specs with more stable and robust features.
 
+<a href="https://saweria.co/azharimm" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 # Phone Specifications API
 The data is based on gsmarena site
 ## 1. List Brands
