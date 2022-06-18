@@ -8,6 +8,8 @@ If you like this project, you can give me a cup of coffee :)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://saweria.co/azharimm)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/azharimm)
+
 # Phone Specifications API
 The data is based on gsmarena site
 ## 1. List Brands
