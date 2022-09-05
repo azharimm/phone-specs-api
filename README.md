@@ -46,7 +46,7 @@ The data is based on gsmarena site
 [ENDPOINT] /v2/search
 ```
 ```
-[GET] http://api-mobilespecs.azharimm.site/v2/search?query= iPhone 12 pro max
+[GET] https://api-mobilespecs.azharimm.site/v2/search?query= iPhone 12 pro max
 ```
 ### Query params
 | params        | desc | required |
