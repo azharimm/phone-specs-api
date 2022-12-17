@@ -19,8 +19,7 @@ exports.index = async (req, res) => {
 					phone_name,
 					slug,
 					image,
-					detail:
-						req.protocol + "://" + req.get("host") + "/v2/" + slug,
+					detail: req.protocol + "://" + req.get("host") + "/" + slug,
 				});
 			});
 
@@ -56,13 +55,9 @@ exports.topInterest = async (req, res) => {
 					phones.push({
 						phone_name,
 						slug,
-						hits: parseInt(hits.replace(/,/g, '')),
+						hits: parseInt(hits.replace(/,/g, "")),
 						detail:
-							req.protocol +
-							"://" +
-							req.get("host") +
-							"/v2/" +
-							slug,
+							req.protocol + "://" + req.get("host") + "/" + slug,
 					});
 				}
 			});
@@ -99,13 +94,9 @@ exports.topFans = async (req, res) => {
 					phones.push({
 						phone_name,
 						slug,
-						favorites: parseInt(favorites.replace(/,/g, '')),
+						favorites: parseInt(favorites.replace(/,/g, "")),
 						detail:
-							req.protocol +
-							"://" +
-							req.get("host") +
-							"/v2/" +
-							slug,
+							req.protocol + "://" + req.get("host") + "/" + slug,
 					});
 				}
 			});
