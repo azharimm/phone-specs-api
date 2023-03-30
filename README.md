@@ -21,7 +21,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/brands
+[GET] https://phone-specs-api.azharimm.dev/brands
 ```
 
 ## 2. List Phones
@@ -31,7 +31,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/brands/apple-phones-48?page=2
+[GET] https://phone-specs-api.azharimm.dev/brands/apple-phones-48?page=2
 ```
 
 ### Query params
@@ -47,7 +47,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/apple_iphone_12_pro_max-10237
+[GET] https://phone-specs-api.azharimm.dev/apple_iphone_12_pro_max-10237
 ```
 
 ## 4. Search
@@ -57,7 +57,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] http://api-mobilespecs.azharimm.dev/search?query= iPhone 12 pro max
+[GET] http://phone-specs-api.azharimm.dev/search?query= iPhone 12 pro max
 ```
 
 ### Query params
@@ -73,7 +73,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/latest
+[GET] https://phone-specs-api.azharimm.dev/latest
 ```
 
 ## 6. Top By Interest
@@ -83,7 +83,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/top-by-interest
+[GET] https://phone-specs-api.azharimm.dev/top-by-interest
 ```
 
 ## 7. Top By Fans
