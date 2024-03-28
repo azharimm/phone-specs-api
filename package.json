@@ -17,7 +17,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.11",
     "puppeteer": "^22.6.1",
-    "puppeteer-core": "^22.6.1",
+    "puppeteer-core": "^10.1.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
   },
