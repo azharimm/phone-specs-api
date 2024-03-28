@@ -15,11 +15,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.11",
-    "puppeteer": "^10.4.0",
+    "puppeteer": "^22.6.1",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "chrome-aws-lambda": "^10.1.0",
-    "puppeteer-core": "^10.4.0"
+    "request-promise": "^4.2.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

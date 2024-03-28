@@ -1,7 +1,6 @@
 const cheerio = require("cheerio");
 const { json, errorJson } = require("../../utils/response");
 const puppeteer = require("puppeteer");
-const chromium = require("chrome-aws-lambda");
 
 exports.index = async (req, res) => {
   try {
@@ -13,17 +12,7 @@ exports.index = async (req, res) => {
       url = `${process.env.BASE_URL}/res.php3?sSearch=${q}`;
     }
 
-    let browser;
-    if (process.env.NODE_ENV === "development") {
-      browser = await puppeteer.launch();
-    } else {
-      browser = await chromium.puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
-      });
-    }
+    const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
     await page.goto(url, {
