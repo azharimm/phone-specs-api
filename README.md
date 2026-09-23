@@ -1,10 +1,10 @@
 ## Important Notes:
 
-Hi i've updated this api, if you're currently using this API please take a look at the new `/v2` endpoint and consider using it since the original version is about to be terminated anytime soon. Thanks!
+Hi I've updated this API, if you're currently still using the old one, please migrate to the new `/v2` endpoint now that the original version has been terminated.
 
 ## Donation
 
-If you like this project, you can give me a cup of coffee :)
+If you like this project, please consider buying me a cup of coffee 😊
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://saweria.co/azharimm)
 
@@ -12,7 +12,7 @@ If you like this project, you can give me a cup of coffee :)
 
 # Phone Specifications API
 
-The data is based on gsmarena site
+The data is based on the [GSM Arena](https://gsmarena.com) website.
 
 ## 1. List Brands
 
@@ -21,7 +21,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/brands
+[GET] https://phone-specs-api-2.azharimm.dev/brands
 ```
 
 ## 2. List Phones
@@ -31,7 +31,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/brands/apple-phones-48?page=2
+[GET] https://phone-specs-api-2.azharimm.dev/brands/apple-phones-48?page=2
 ```
 
 ### Query params
@@ -47,7 +47,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/apple_iphone_12_pro_max-10237
+[GET] https://phone-specs-api-2.azharimm.dev/apple_iphone_12_pro_max-10237
 ```
 
 ## 4. Search
@@ -73,7 +73,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/latest
+[GET] https://phone-specs-api-2.azharimm.dev/latest
 ```
 
 ## 6. Top By Interest
@@ -83,7 +83,7 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/top-by-interest
+[GET] https://phone-specs-api-2.azharimm.dev/top-by-interest
 ```
 
 ## 7. Top By Fans
@@ -93,5 +93,5 @@ The data is based on gsmarena site
 ```
 
 ```
-[GET] https://api-mobilespecs.azharimm.dev/top-by-fans
+[GET] https://phone-specs-api-2.azharimm.dev/top-by-fans
 ```
